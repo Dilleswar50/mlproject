@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-logs_path=os.path.join(os.getcwd(),"logs",LOG_FILE)                     # in the current working directory it creates 'logs' and with file name "%m_%d_%Y_%H_%M_%S".log file
+logs_path=os.path.join(os.getcwd(),"logs",LOG_FILE)                     # in the current working directory it creates 'logs' folder and with file name "%m_%d_%Y_%H_%M_%S".log file
 os.makedirs(logs_path,exist_ok=True)
 
 LOG_FILE_PATH=os.path.join(logs_path,LOG_FILE)
@@ -16,6 +16,6 @@ logging.basicConfig(
 
 )
 
-# to check if it is working
+# to check if it is working or not
 # if __name__=="__main__":
 #     logging.info("Logging has started.")
