@@ -103,11 +103,15 @@ class ModelTrainer:
                 file_path=self.model_trainer_config.trained_model_file_path,
                 obj=best_model
             )
+            y_train_pred = best_model.predict(X_train)
 
-            predicted=best_model.predict(X_test)
+            y_test_pred=best_model.predict(X_test)
+            
+            training_r2_score = r2_score(y_train, y_train_pred)
 
-            r2_square = r2_score(y_test, predicted)
-            return r2_square
+            testing_r2_score = r2_score(y_test, y_test_pred)
+            
+            return (training_r2_score,testing_r2_score)
             
             
         except Exception as e:
