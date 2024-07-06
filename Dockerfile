@@ -1,15 +1,4 @@
-FROM python:3.8-alpine
-
-# Install build dependencies
-RUN apk add --no-cache \
-    gcc \
-    musl-dev \
-    libffi-dev \
-    bash \
-    gfortran \
-    openblas-dev \
-    lapack-dev
-
+FROM python:3.8-slim
 COPY . /app
 WORKDIR /app
 EXPOSE 5000
